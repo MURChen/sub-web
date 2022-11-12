@@ -5,7 +5,7 @@ COPY package.json ./
 RUN yarn install
 
 # ---- Build ----
-FROM dependencies AS build
+FROM node:12-alpine AS dependencies
 WORKDIR /app
 COPY . /app
 RUN yarn build
